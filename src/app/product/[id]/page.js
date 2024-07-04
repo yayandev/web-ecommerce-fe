@@ -2,7 +2,7 @@ import NotFound from "@/app/not-found";
 import DetailProductView from "@/components/pages/product/DetailProductView";
 
 const getProduct = async (id) => {
-  const res = await fetch(`https://dummyjson.com/products/${id}`);
+  const res = await fetch(`${process.env.API_URL}/products/${id}`);
   const data = await res.json();
   return data;
 };

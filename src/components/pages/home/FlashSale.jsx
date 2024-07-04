@@ -25,7 +25,7 @@ const FlashSale = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://dummyjson.com/products?limit=15&skip=15")
+    fetch(`${process.env.API_URL}/products?limit=15&skip=15`)
       .then((result) => {
         result.json().then((res) => {
           setProducts(res.products);

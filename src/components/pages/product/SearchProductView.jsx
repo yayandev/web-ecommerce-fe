@@ -15,7 +15,7 @@ const SearchProductView = () => {
 
   const getProductsByCategory = async () => {
     const res = await fetch(
-      `https://dummyjson.com/products/search?q=${keyword}&limit=${limit}&skip=${skip}`
+      `${process.env.API_URL}/products/search?q=${keyword}&limit=${limit}&skip=${skip}`
     );
     const data = await res.json();
     setProducts((prevProducts) => [...prevProducts, ...data?.products]);

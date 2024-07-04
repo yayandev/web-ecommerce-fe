@@ -7,7 +7,7 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
+    fetch(`${process.env.API_URL}/products/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .finally(() => setLoading(false));

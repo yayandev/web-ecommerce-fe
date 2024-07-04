@@ -10,7 +10,7 @@ const BestProduct = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://dummyjson.com/products?limit=10")
+    fetch(`${process.env.API_URL}/products?limit=10`)
       .then((result) => {
         result.json().then((res) => {
           setProducts(res.products);

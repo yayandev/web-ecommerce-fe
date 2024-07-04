@@ -11,7 +11,7 @@ const RelatedProduct = ({ category }) => {
 
   const fetchProducts = async () => {
     const res = await fetch(
-      `https://dummyjson.com/products/category/${category}?limit=5`
+      `${process.env.API_URL}/products/category/${category}?limit=5`
     );
     const data = await res.json();
     setProducts(data.products);

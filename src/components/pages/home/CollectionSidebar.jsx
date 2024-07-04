@@ -9,7 +9,7 @@ const CollectionSidebar = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://dummyjson.com/products/categories")
+    fetch(`${process.env.API_URL}/products/categories`)
       .then((result) => result.json())
       .then((res) => {
         setCollections(res);

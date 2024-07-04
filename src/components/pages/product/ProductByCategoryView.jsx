@@ -15,7 +15,7 @@ const ProductByCategoryView = () => {
 
   const getProductsByCategory = async () => {
     const res = await fetch(
-      `https://dummyjson.com/products/category/${category}?limit=${limit}&skip=${skip}`
+      `${process.env.API_URL}/products/category/${category}?limit=${limit}&skip=${skip}`
     );
     const data = await res.json();
     setProducts((prevProducts) => [...prevProducts, ...data?.products]);
