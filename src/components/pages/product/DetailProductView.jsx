@@ -3,6 +3,7 @@ import StarRating from "@/components/ui/StarRating";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import RelatedProduct from "./RelatedProduct";
+import Link from "next/link";
 
 const DetailProductView = ({ product }) => {
   const [activeImage, setActiveImage] = useState(0);
@@ -90,9 +91,12 @@ const DetailProductView = ({ product }) => {
               </div>
             </div>
             <div className="flex-1 flex gap-2">
-              <button className="text-center flex-1 py-2 px-3 rounded-sm bg-red-500 text-white font-semibold text-lg">
+              <Link
+                href={`/order/${product.id}?qty=${quantity}`}
+                className="text-center flex-1 py-2 px-3 rounded-sm bg-red-500 text-white font-semibold text-lg"
+              >
                 Buy Now
-              </button>
+              </Link>
               <button className="flex-1 flex justify-center items-center py-2 px-3 rounded-sm border font-semibold text-lg">
                 <FaShoppingCart />
               </button>
